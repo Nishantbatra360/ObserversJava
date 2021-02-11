@@ -1,0 +1,15 @@
+public class AirplaneGUI implements AltitudeObserver
+{
+  public AirplaneGUI ()
+  {
+    System.out.println ("Constrcutor called");
+    Airplane airplane = new Airplane ();
+      airplane.addObserver (this);
+      airplane.changeAltitude (1000);
+  }
+   @Override public void update (int oldValue, int newValue)
+  {
+    System.out.println ("Old value: " + oldValue + " New value: " + newValue);
+  }
+
+}
